@@ -1,24 +1,18 @@
 import { GeneralTitle } from "../../styles/globalStyle";
-import {
-  SignUpSignInForm,
-  SignUpSignInInput,
-  SignUpSignInButton,
-  SignUpSignInSpan,
-  SignUpSingInContainer,
-} from "../../styles/signInSignUpStyle";
+import * as Style from "../../styles/generalStyle";
 
 export function Login() {
   return (
-    <SignUpSingInContainer>
+    <Style.GeneralContainer>
       <GeneralTitle>My Wallet</GeneralTitle>
-      <SignUpSignInForm>
-        <SignUpSignInInput type={"text"} placeholder="E-mail" />
-        <SignUpSignInInput type={"text"} placeholder="Senha" />
-        <SignUpSignInButton type={"submit"}>Entrar</SignUpSignInButton>
-      </SignUpSignInForm>
-      <SignUpSignInSpan>
-        Primeira vez? <a>Cadastre-se!</a>
-      </SignUpSignInSpan>
-    </SignUpSingInContainer>
+      <Style.GeneralForm>
+        <Style.GeneralInput type={"text"} placeholder="E-mail" />
+        <Style.GeneralInput type={"text"} placeholder="Senha" />
+        <Style.GeneralButton type={"submit"}>Entrar</Style.GeneralButton>
+      </Style.GeneralForm>
+      <Style.GeneralSpan>
+        Primeira vez? <a href={"/signup"}>Cadastre-se!</a>
+      </Style.GeneralSpan>
+    </Style.GeneralContainer>
   );
 }

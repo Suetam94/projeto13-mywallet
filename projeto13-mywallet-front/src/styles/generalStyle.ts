@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SignUpSingInContainer = styled.main`
+export const GeneralContainer = styled.main`
   min-width: 375px;
   min-height: 100vh;
   display: flex;
@@ -10,7 +10,15 @@ export const SignUpSingInContainer = styled.main`
   padding: 0 25px;
 `;
 
-export const SignUpSignInForm = styled.form`
+export const GeneralH2Title = styled.h2`
+  font-family: "Raleway", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 31px;
+  color: #ffffff;
+`;
+
+export const GeneralForm = styled.form`
   display: flex;
   min-width: 326px;
   min-height: 188px;
@@ -23,7 +31,7 @@ export const SignUpSignInForm = styled.form`
   justify-content: space-between;
 `;
 
-export const SignUpSignInInput = styled.input`
+export const GeneralInput = styled.input`
   width: 100%;
   height: 58px;
   background: #ffffff;
@@ -41,7 +49,7 @@ export const SignUpSignInInput = styled.input`
   }
 `;
 
-export const SignUpSignInButton = styled.button`
+export const GeneralButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,7 +69,7 @@ export const SignUpSignInButton = styled.button`
   }
 `;
 
-export const SignUpSignInSpan = styled.span`
+export const GeneralSpan = styled.span`
   font-family: "Raleway", serif;
   font-weight: 700;
   font-size: 15px;
