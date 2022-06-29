@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
+export const SignUpSingInContainer = styled.main`
   min-width: 375px;
   min-height: 100vh;
   display: flex;
@@ -10,19 +10,12 @@ export const Container = styled.main`
   padding: 0 25px;
 `;
 
-export const Title = styled.h1`
-  font-family: "Saira Stencil One", sans-serif;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 50px;
-  color: #ffffff;
-`;
-
-export const Form = styled.form`
+export const SignUpSignInForm = styled.form`
   display: flex;
   min-width: 326px;
+  min-height: 188px;
+  max-height: 330px;
   width: 100%;
-  height: 188px;
   margin-top: 24px;
   margin-bottom: 36px;
   flex-direction: column;
@@ -30,7 +23,7 @@ export const Form = styled.form`
   justify-content: space-between;
 `;
 
-export const Input = styled.input`
+export const SignUpSignInInput = styled.input`
   width: 100%;
   height: 58px;
   background: #ffffff;
@@ -41,13 +34,14 @@ export const Input = styled.input`
   font-size: 20px;
   line-height: 23px;
   color: #000000;
+  margin-bottom: 13px;
 
   &::placeholder {
     color: #000000;
   }
 `;
 
-export const Button = styled.button`
+export const SignUpSignInButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +61,7 @@ export const Button = styled.button`
   }
 `;
 
-export const Span = styled.span`
+export const SignUpSignInSpan = styled.span`
   font-family: "Raleway", serif;
   font-weight: 700;
   font-size: 15px;

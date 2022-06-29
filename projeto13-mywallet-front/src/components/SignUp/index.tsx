@@ -7,17 +7,19 @@ import {
   SignUpSingInContainer,
 } from "../../styles/signInSignUpStyle";
 
-export function Login() {
+export function SignUp() {
   return (
     <SignUpSingInContainer>
       <GeneralTitle>My Wallet</GeneralTitle>
       <SignUpSignInForm>
+        <SignUpSignInInput type={"text"} placeholder="Nome" />
         <SignUpSignInInput type={"text"} placeholder="E-mail" />
-        <SignUpSignInInput type={"text"} placeholder="Senha" />
-        <SignUpSignInButton type={"submit"}>Entrar</SignUpSignInButton>
+        <SignUpSignInInput type={"password"} placeholder="Senha" />
+        <SignUpSignInInput type={"password"} placeholder="Confirme a senha" />
+        <SignUpSignInButton type={"submit"}>Cadastrar</SignUpSignInButton>
       </SignUpSignInForm>
       <SignUpSignInSpan>
-        Primeira vez? <a>Cadastre-se!</a>
+        Já tem uma conta? <a>Entre agora!</a>
       </SignUpSignInSpan>
     </SignUpSingInContainer>
   );

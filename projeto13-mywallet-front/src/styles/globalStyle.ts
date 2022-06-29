@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`  
   * {
@@ -15,4 +15,12 @@ export const GlobalStyle = createGlobalStyle`
     background-color: #8C11BE;
     min-height: 100vh;
   }
+`;
+
+export const GeneralTitle = styled.h1`
+  font-family: "Saira Stencil One", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 50px;
+  color: #ffffff;
 `;
