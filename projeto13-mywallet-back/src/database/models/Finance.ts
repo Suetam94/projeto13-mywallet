@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import { type } from "os";
 
 const Finance = new Schema({
   entry: {
@@ -9,9 +10,9 @@ const Finance = new Schema({
     type: String,
     required: true,
   },
-  total: {
-    type: Number,
-    required: true,
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
   },
 });
 

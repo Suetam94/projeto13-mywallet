@@ -10,6 +10,12 @@ interface ICreateUserData {
 
 class UserUseCases {
   async create({ name, password, email }: ICreateUserData) {
+    const userAlreadyExists = await User.findOne({ email });
+
+    if (userAlreadyExists) {
+      throw new Error("E-mail is already in use.");
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = new User({

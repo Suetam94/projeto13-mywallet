@@ -22,7 +22,8 @@ class UserController {
 
       return res.status(201).json(user).send();
     } catch (e) {
-      return res.status(400).json({ error: e }).send();
+      console.log(e);
+      return res.status(400).send({ message: e.message });
     }
   }
 
@@ -34,7 +35,7 @@ class UserController {
 
       return res.status(200).json(user).send();
     } catch (e) {
-      return res.status(400).json({ error: e }).send();
+      return res.status(400).send({ message: e.message });
     }
   }
 }
