@@ -1,6 +1,13 @@
+import { UserUseCases } from "../useCases/UserUseCases";
 import { validateUserData } from "../utils/validators/userValidator";
 
 class UserController {
+  private userUseCases: UserUseCases;
+
+  constructor() {
+    this.userUseCases = new UserUseCases();
+  }
+
   async createUser(req, res) {
     const { name, email, password } = req.body;
 
@@ -11,7 +18,9 @@ class UserController {
         password,
       });
 
-      return res.status(201).json(userDataValidate).send();
+      const user = await this.userUseCases.create(userDataValidate);
+
+      return res.status(201).json(user).send();
     } catch (e) {
       return res.status(400).json({ error: e }).send();
     }

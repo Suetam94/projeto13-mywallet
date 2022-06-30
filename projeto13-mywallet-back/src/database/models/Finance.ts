@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-const FinanceSchema = new Schema({
+const Finance = new Schema({
   entry: {
     type: Number,
     required: true,
@@ -15,4 +15,4 @@ const FinanceSchema = new Schema({
   },
 });
 
-export default model("Finance", FinanceSchema);
+export default model("Finance", Finance);
