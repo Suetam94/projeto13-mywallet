@@ -20,6 +20,10 @@ class UserUseCases {
 
     return user.save();
   }
+
+  async getOne(id) {
+    return User.findById(id);
+  }
 }
 
 export { UserUseCases };
