@@ -1,4 +1,5 @@
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 import User from "../database/models/User";
 
@@ -7,6 +8,8 @@ interface ICreateUserData {
   password: string;
   email: string;
 }
+
+type LoginUserData = Omit<ICreateUserData, "name">;
 
 class UserUseCases {
   async create({ name, password, email }: ICreateUserData) {
@@ -25,6 +28,24 @@ class UserUseCases {
     });
 
     return user.save();
+  }
+
+  async login({ email, password }: LoginUserData) {
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      throw new Error("This e-mail does not exists.");
+    }
+
+    const isLoginValid = await bcrypt.compare(password, user.password);
+
+    if (!isLoginValid) {
+      throw new Error("Password is not valid.");
+    }
+
+    return jwt.sign({ id: user.id }, process.env.PRIVATE_KEY, {
+      algorithm: "HS256",
+    });
   }
 
   async getOne(id) {

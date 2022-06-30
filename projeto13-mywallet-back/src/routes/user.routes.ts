@@ -7,5 +7,6 @@ const userController = new UserController();
 
 userRouter.get("/:id", (req, res) => userController.getUser(req, res));
 userRouter.post("/create", (req, res) => userController.createUser(req, res));
+userRouter.post("/login", (req, res) => userController.loginUser(req, res));
 
 export { userRouter };
