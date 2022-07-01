@@ -61,6 +61,7 @@ export const InputsAndOutputsBox = styled.a`
   background: #a328d6;
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
   
   &:hover {
     filter: brightness(0.95);
