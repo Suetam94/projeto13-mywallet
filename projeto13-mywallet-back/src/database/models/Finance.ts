@@ -1,5 +1,4 @@
 import { Schema, model } from "mongoose";
-import { type } from "os";
 
 const Finance = new Schema({
   entry: {
@@ -8,7 +7,11 @@ const Finance = new Schema({
   },
   entryType: {
     type: String,
+    enum: ["inbound", "outbound"],
     required: true,
+  },
+  description: {
+    type: String,
   },
   userId: {
     type: Schema.Types.ObjectId,
