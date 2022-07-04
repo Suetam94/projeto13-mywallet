@@ -17,6 +17,10 @@ const Finance = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
+  createdAt: {
+    type: Date,
+    default: new Date(),
+  },
 });
 
 export default model("Finance", Finance);
