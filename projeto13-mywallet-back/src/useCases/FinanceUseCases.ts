@@ -54,7 +54,7 @@ class FinanceUseCases {
       outboundSum += outbound.entry;
     });
 
-    return inboundSum - outboundSum;
+    return { total: inboundSum - outboundSum };
   }
 }
 
