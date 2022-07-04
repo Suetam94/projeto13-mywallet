@@ -13,7 +13,7 @@ interface IToken {
 
 class AuthUseCases {
   async verify({ token }: IAuth) {
-    const tokenFiltered = token.split("Bearer ");
+    const tokenFiltered = token.replaceAll('"', "").split("Bearer ");
 
     const tokenPayload = Jwt.verify(
       tokenFiltered[1],
