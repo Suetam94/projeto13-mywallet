@@ -20,7 +20,7 @@ export function Login() {
 
   const navigate = useNavigate();
 
-  const { token, userLogin } = useUser();
+  const { userLogin } = useUser();
 
   async function handleFormSubmit(event: FormEvent) {
     event.preventDefault();
@@ -31,7 +31,7 @@ export function Login() {
     };
 
     try {
-      await userLogin(loginData);
+      const token = await userLogin(loginData);
 
       localStorage.setItem("myWalletToken", JSON.stringify(token));
 
@@ -39,6 +39,8 @@ export function Login() {
 
       if (localToken) {
         return navigate("/summary");
+      } else {
+        throw new Error();
       }
     } catch (e) {
       return handleShow();

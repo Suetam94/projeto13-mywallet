@@ -62,7 +62,7 @@ export const InputsAndOutputsBox = styled.a`
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  
+
   &:hover {
     filter: brightness(0.95);
   }
@@ -70,9 +70,41 @@ export const InputsAndOutputsBox = styled.a`
 
 export const InputsAndOutputsText = styled.span`
   display: block;
-  font-family: 'Raleway',serif;
+  font-family: "Raleway", serif;
   font-weight: 700;
   font-size: 17px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
+`;
+
+export const FinancesContentContainer = styled.div`
+  min-width: 303px;
+  width: 100%;
+  padding: 23px 11px 23px 12px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const FinancesContentData = styled.div`
+  font-family: 'Raleway',serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #C6C6C6;
+`;
+
+export const FinancesContentTitle = styled.div`
+  font-family: 'Raleway',serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+`;
+
+export const FinancesContentValue = styled.div`
+  font-family: 'Raleway',serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
 `;

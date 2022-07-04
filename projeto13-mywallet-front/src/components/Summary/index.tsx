@@ -7,10 +7,18 @@ import {
   InputsAndOutputsContainer,
   InputsAndOutputsBox,
   InputsAndOutputsText,
+  FinancesContentContainer,
+  FinancesContentData,
+  FinancesContentTitle,
+  FinancesContentValue,
 } from "./summaryStyle";
 import { MinusCircle, PlusCircle, SignOut } from "phosphor-react";
+import { useFinance } from "../../hooks/useFinance";
+import { format } from "date-fns";
 
 export function Summary() {
+  const { financeData } = useFinance();
+
   return (
     <Container>
       <Header>
@@ -25,7 +33,27 @@ export function Summary() {
         </a>
       </Header>
       <SummaryBox>
-        <EmptyText>Não há registros de entrada ou saída</EmptyText>
+        {financeData.length > 0 ? (
+          financeData.map(({ createdAt, description, entry, entryType }) => {
+            return (
+              <FinancesContentContainer>
+                <FinancesContentData>
+                  {format(new Date(createdAt), "dd/MM")}
+                </FinancesContentData>
+                <FinancesContentTitle>{description}</FinancesContentTitle>
+                <FinancesContentValue
+                  style={{
+                    color: entryType === "outbound" ? "#C70000" : "#03AC00",
+                  }}
+                >
+                  {(entry / 100).toFixed(2).replace(".", ",")}
+                </FinancesContentValue>
+              </FinancesContentContainer>
+            );
+          })
+        ) : (
+          <EmptyText>Não há registros de entrada ou saída</EmptyText>
+        )}
       </SummaryBox>
       <InputsAndOutputsContainer>
         <InputsAndOutputsBox href={"/new?inbound=true"}>
